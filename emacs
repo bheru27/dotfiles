@@ -23,11 +23,6 @@
 (add-to-list 'default-frame-alist '(font .  "Source Code Pro Semibold" ))
 (set-face-attribute 'default t :font  "Source Code Pro Semibold")
 
-;; hook to activate spanish check
-(global-set-key (kbd "C-c E") 
-  (lambda()(interactive)
-    (ispell-change-dictionary "castellano")
-    (flyspell-buffer))) 
 
 ;;;;;;;;;; Org Mode ;;;;;;;;;;;;;;;;
 (require 'org)
