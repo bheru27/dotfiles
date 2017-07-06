@@ -1,11 +1,28 @@
 ;; Emacs Configuration File
 ;; Bryan Hernandez Ruiz -- Bheru27
 
+(require 'package)
 ;;emacs package repos
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
+
+;;Install packages if not installed 
+
+(unless (package-installed-p 'alchemist)
+  (package-install 'alchemist))
+(unless (pckage-installed-p 'alect-themes)
+  (package-install 'alect-themes)
+
+;; Themes
+(load-theme 'alect-black t)
+
+;; Remove toolbar and menu bar
+
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+
+
 
 ;;Change emacs autosave files to another directory.
 
@@ -32,12 +49,18 @@
 
 ;;;;;;;;;;; Programming Configuration ;;;;;;;;;;;;
 
-(setq c-basic-offset 4)
 
-;;Python Mode
-(autoload 'python-mode "python-mode" "Python editing mode." t)
-    (setq auto-mode-alist
-           (cons '("\\.py$" . python-mode) auto-mode-alist))
-     (setq interpreter-mode-alist
-           (cons '("python" . python-mode) interpreter-mode-alist))
 
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (alect-themes alchemist))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
