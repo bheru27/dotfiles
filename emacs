@@ -10,6 +10,7 @@
 ;;Install packages if not installed 
 
 (unless (package-installed-p 'alchemist)
+  (package-refresh-contents) 
   (package-install 'alchemist))
 (unless (package-installed-p 'alect-themes)
   (package-install 'alect-themes))
