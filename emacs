@@ -11,8 +11,8 @@
 
 (unless (package-installed-p 'alchemist)
   (package-install 'alchemist))
-(unless (pckage-installed-p 'alect-themes)
-  (package-install 'alect-themes)
+(unless (package-installed-p 'alect-themes)
+  (package-install 'alect-themes))
 
 ;; Themes
 (load-theme 'alect-black t)
